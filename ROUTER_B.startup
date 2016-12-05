@@ -1,0 +1,14 @@
+#Router B - Router Office
+ifconfig eth0 192.168.3.10/30 up
+
+#Router B - Router A
+ifconfig eth1 192.168.3.2/30 up
+
+#Router B - B DB
+ifconfig eth4 192.168.2.33/29 up
+
+#Router B - B WEB
+ifconfig eth3 192.168.2.17/28 up
+
+#Router B - B NFS
+ifconfig eth2 192.168.2.1/28 up

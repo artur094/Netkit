@@ -1,0 +1,8 @@
+#Router Office - Office
+ifconfig eth0 192.168.4.1/24 up
+
+#Router Office - Router A
+ifconfig eth1 192.168.3.9/30 up
+
+#Router Office - Router B
+ifconfig eth2 192.168.13./30 up

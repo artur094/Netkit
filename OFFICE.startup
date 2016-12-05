@@ -1,0 +1,2 @@
+#Office - Router Office
+ifconfig eth0 192.168.4.2/24 up
