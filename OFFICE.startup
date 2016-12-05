@@ -1,2 +1,5 @@
-#Office - Router Office
+#Setting IP for Office PC
 ifconfig eth0 192.168.4.2/24 up
+
+#Default Gateway
+route add default gw 192.168.4.1

@@ -1,1 +1,5 @@
+#Setting IP for DB Server
 ifconfig eth0 192.168.2.34/29 up
+
+#Default Gateway
+route add default gw 192.168.2.33

@@ -1,1 +1,5 @@
+#Setting IP for WEB Server
 ifconfig eth0 192.168.2.18/28 up
+
+#Default Gateway
+route add default gw 192.168.2.17
