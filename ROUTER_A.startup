@@ -4,11 +4,14 @@ ifconfig eth0 192.168.3.6/30 up
 #Router A - Router B
 ifconfig eth1 192.168.3.1/30 up
 
+#Configuring VLAN
+#vconfig add eth2 eth3 200
+
 #Router A - A NFS
-ifconfig eth2 192.168.1.1/28 up
+#ifconfig eth2.200 192.168.1.1/28 up
 
 #Router A - A WEB
-ifconfig eth3 192.168.1.17/28 up
+#ifconfig eth3.200 192.168.1.17/28 up
 
 #Router A - A DB
 ifconfig eth4 192.168.1.33/29 up
