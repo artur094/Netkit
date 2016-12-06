@@ -1,7 +1,16 @@
+#Opening ports
 ifconfig eth0 up
 ifconfig eth1 up
 
-brctl addbr br0
-brctl addif br0 eth0 eth1
+#Configuring VLAN
+vconfig add eth0 200
 
+#Opening VLAN interface for NFS-WEB
+ifconfig eth0.200 up
+
+#Bridge
+brctl addbr br0
+brctl addif br0 eth0.200 eth1
+
+#Opening bridge 'bro' interface
 ifconfig br0 up
