@@ -1,5 +1,6 @@
 #Setting IP for DB Server
-ifconfig eth0 192.168.2.34/29 up
+ifconfig eth0 192.168.50.2/29 up
 
-#Default Gateway
-route add default gw 192.168.2.33
+#Routes for WEB A & WEB B
+route add -net 192.168.30.0/28 gw 192.168.50.1 dev eth0
+route add -net 192.168.60.0/28 gw 192.168.50.1 dev eth0

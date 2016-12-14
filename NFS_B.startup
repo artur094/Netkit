@@ -1,5 +1,6 @@
 #Setting IP for NFS Server
-ifconfig eth0 192.168.2.2/28 up
+ifconfig eth0 192.168.40.2/28 up
 
-#Default Gateway
-route add default gw 192.168.2.1
+#Routes for WEB A & WEB B
+route add -net 192.168.30.0/28 gw 192.168.40.1 dev eth0
+route add -net 192.168.60.0/28 gw 192.168.40.1 dev eth0
