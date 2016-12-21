@@ -3,4 +3,6 @@ ifconfig eth0 192.168.10.2/28 up
 
 #Routes for WEB A & WEB B
 route add -net 192.168.30.0/28 gw 192.168.10.1 dev eth0
-route add -net 192.168.60.0/28 gw 192.168.10.1 dev eth0
+
+#TODO: REMOVE THIS ROUTE
+#route add -net 192.168.60.0/28 gw 192.168.10.1 dev eth0
