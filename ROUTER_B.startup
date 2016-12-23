@@ -1,24 +1,19 @@
-#Opening ports
-ifconfig eth0 up
-ifconfig eth1 up
-ifconfig eth2 up
-ifconfig eth3 up
-ifconfig eth4 up
-
 #Router B - Router Office
 ifconfig eth4 192.168.90.2/30 up
 
 #Router B - Router A
 ifconfig eth3 192.168.70.2/30 up
 
-#Router B - B NFS
+#Router B - NFS B
 ifconfig eth0 192.168.40.1/28 up
 
-#Router B - B DB
+#Router B - DB B
 ifconfig eth1 192.168.50.1/29 up
 
-#Router B - B WEB
+#Router B - WEB B
 ifconfig eth2 192.168.60.1/28 up
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
 
 #Gateway for WEB A
 route add -net 192.168.30.0/28 gw 192.168.70.1 dev eth3
@@ -31,3 +26,14 @@ route add -net 192.168.10.0/28 gw 192.168.70.1 dev eth3
 
 #Default Gateway
 route add default gw 192.168.90.1 dev eth4
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
+
+#Policies for NFS_B
+iptables -A FORWARD -s 192.168.40.0/28 -d 192.168.60.0/28 -j ACCEPT
+iptables -A FORWARD -s 192.168.40.0/28 -j REJECT
+
+#Policies for DB_B
+iptables -A FORWARD -s 192.168.50.0/29 -d 192.168.30.0/28 -j ACCEPT
+iptables -A FORWARD -s 192.168.50.0/29 -d 192.168.60.0/28 -j ACCEPT
+iptables -A FORWARD -s 192.168.50.0/29 -j REJECT

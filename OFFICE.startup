@@ -1,6 +1,5 @@
 #Setting IP for Office PC
 ifconfig eth0 192.168.100.2/27 up
 
-#Routes for WEB A & WEB B
-route add -net 192.168.30.0/28 gw 192.168.100.1 dev eth0
-route add -net 192.168.60.0/28 gw 192.168.100.1 dev eth0
+#Default Gateway
+route add default gw 192.168.100.1 dev eth0
